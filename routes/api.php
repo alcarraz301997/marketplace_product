@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Product\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->group(function (){
+    // Route::post('login', [AuthController::class, 'login'])->withoutMiddleware('auth:api');
+    // Route::get('validate-user', [AuthController::class, 'validateUser']);
+    // Route::post('me', [AuthController::class, 'me']);
+    // Route::post('logout', [AuthController::class, 'logout']);
+    // Route::post('refresh', [AuthController::class, 'refresh']);
+    // Route::post('wiris-image', [AuthController::class, 'getWirisImage']);
+
+    Route::group(['prefix' => 'products'], function () {
+        Route::get('', [ProductController::class, 'index']);
+        Route::post('', [ProductController::class, 'store']);
+        Route::patch('{id}', [ProductController::class, 'update']);
+        Route::delete('{id}', [ProductController::class, 'destroy']);
+    });
+// });

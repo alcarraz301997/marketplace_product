@@ -1,0 +1,1339 @@
+{
+	"info": {
+		"_postman_id": "6cc6c28a-2eea-4d4e-8818-631f723c7a0c",
+		"name": "Productos Marketplace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34770854",
+		"_collection_link": "https://odiseo-4743.postman.co/workspace/ODISEO-Workspace~8077cf96-34f2-4097-82d1-b8876444c1b3/collection/34770854-6cc6c28a-2eea-4d4e-8818-631f723c7a0c?action=share&source=collection_link&creator=34770854"
+	},
+	"item": [
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Listar productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/products?min_price=&max_price=&order_by=asc",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "min_price",
+									"value": ""
+								},
+								{
+									"key": "max_price",
+									"value": ""
+								},
+								{
+									"key": "order_by",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/products",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Oct 2025 23:32:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"OK\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"PC Gamer\",\n            \"price\": \"2200.50\",\n            \"stock\": 2\n        },\n        {\n            \"id\": 5,\n            \"name\": \"PC\",\n            \"price\": \"1500.00\",\n            \"stock\": 3\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Celular\",\n            \"price\": \"800.00\",\n            \"stock\": 10\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Monitor\",\n            \"price\": \"250.00\",\n            \"stock\": 12\n        },\n        {\n            \"id\": 1,\n            \"name\": \"Laptop\",\n            \"price\": \"3500.99\",\n            \"stock\": 17\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Crear producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"PC\",\r\n    \"price\": 0,\r\n    \"stock\": -1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/products",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"PC\",\r\n    \"price\": 1500.00,\r\n    \"stock\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/products",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Oct 2025 23:32:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Se registro el producto.\",\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"PC\",\n        \"price\": 1500,\n        \"stock\": 3\n    }\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"PC\",\r\n    \"price\": 0,\r\n    \"stock\": -1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/products",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Oct 2025 00:25:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "55"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"Error de validación en los datos enviados.\",\n    \"errors\": {\n        \"price\": [\n            \"El precio debe ser mayor a 0.\"\n        ],\n        \"stock\": [\n            \"El stock no debe ser negativo.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Actualizar producto",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"PC Gamer\",\r\n    \"price\": 1500.00,\r\n    \"stock\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/products/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"PC Gamer\",\r\n    \"price\": 1500.00,\r\n    \"stock\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/products/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"products",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Oct 2025 00:25:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Se actualizo el producto.\",\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"PC Gamer\",\n        \"price\": \"1500.00\",\n        \"stock\": 3\n    }\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"PC Gamer\",\r\n    \"price\": 1500.00,\r\n    \"stock\": -1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/products/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"products",
+										"2"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Oct 2025 00:25:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"Error de validación en los datos enviados.\",\n    \"errors\": {\n        \"stock\": [\n            \"El stock no debe ser negativo.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Eliminar producto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/products/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"products",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/products/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"products",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Oct 2025 23:34:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Se elimino el producto seleccionado.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Top 5 productos vendidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/products/top",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"products",
+								"top"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/products/top",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"products",
+										"top"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Oct 2025 23:58:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Top 5 productos vendidos.\",\n    \"data\": [\n        {\n            \"id\": 4,\n            \"name\": \"Celular\",\n            \"price\": \"800.00\",\n            \"total_sold\": 3\n        },\n        {\n            \"id\": 2,\n            \"name\": \"PC Gamer\",\n            \"price\": \"2200.50\",\n            \"total_sold\": 3\n        },\n        {\n            \"id\": 1,\n            \"name\": \"Laptop\",\n            \"price\": \"3500.99\",\n            \"total_sold\": 3\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Orden",
+			"item": [
+				{
+					"name": "Mostrar ordenes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/orders",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Oct 2025 00:27:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"OK\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"total\": \"17402.97\",\n            \"status\": \"pending\",\n            \"products\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Laptop\",\n                    \"price\": \"3500.99\",\n                    \"stock\": 17,\n                    \"quantity\": 3,\n                    \"subtotal\": \"10502.97\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"PC Gamer\",\n                    \"price\": \"1500.00\",\n                    \"stock\": 0,\n                    \"quantity\": 3,\n                    \"subtotal\": \"4500.00\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"Celular\",\n                    \"price\": \"800.00\",\n                    \"stock\": 10,\n                    \"quantity\": 3,\n                    \"subtotal\": \"2400.00\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Crear orden",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"products\": [\r\n        {\r\n            \"id\": 1,\r\n            \"quantity\": 3\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"quantity\": 4\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": 1,\r\n    \"products\": [\r\n        {\r\n            \"id\": 1,\r\n            \"quantity\": 3\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"quantity\": 3\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"quantity\": 3\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/orders",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Oct 2025 00:26:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Se genero la orden\",\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"total\": 17402.97,\n        \"status\": \"pending\",\n        \"products\": [\n            {\n                \"id\": 1,\n                \"name\": \"Laptop\",\n                \"price\": \"3500.99\",\n                \"stock\": 17,\n                \"quantity\": 3,\n                \"subtotal\": \"10502.97\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"PC Gamer\",\n                \"price\": \"1500.00\",\n                \"stock\": 0,\n                \"quantity\": 3,\n                \"subtotal\": \"4500.00\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Celular\",\n                \"price\": \"800.00\",\n                \"stock\": 10,\n                \"quantity\": 3,\n                \"subtotal\": \"2400.00\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": 1,\r\n    \"products\": [\r\n        {\r\n            \"id\": 1,\r\n            \"quantity\": 3\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"quantity\": 100\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"quantity\": 3\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/orders",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"orders"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Oct 2025 00:26:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"El producto PC Gamer no tiene suficiente stock.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Ordenes por usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/orders/by-user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"orders",
+								"by-user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/orders/by-user",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"orders",
+										"by-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Oct 2025 00:27:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"OK\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"total\": \"17402.97\",\n            \"status\": \"pending\",\n            \"products\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Laptop\",\n                    \"price\": \"3500.99\",\n                    \"stock\": 17,\n                    \"quantity\": 3,\n                    \"subtotal\": \"10502.97\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"PC Gamer\",\n                    \"price\": \"1500.00\",\n                    \"stock\": 0,\n                    \"quantity\": 3,\n                    \"subtotal\": \"4500.00\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"Celular\",\n                    \"price\": \"800.00\",\n                    \"stock\": 10,\n                    \"quantity\": 3,\n                    \"subtotal\": \"2400.00\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Autenticacion",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"junior@tumisoft.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"junior@tumisoft.com\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Oct 2025 23:12:32 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Login exitoso\",\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Junior Alcarraz\",\n            \"email\": \"junior@tumisoft.com\",\n            \"created_at\": \"2025-10-24T22:57:10.000000Z\",\n            \"updated_at\": null\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTNkMWFjNTQ5MmYzZjkwMzQ5NTVmMzczZDQzZGMyMjNhNDM3Y2QxNzI5YmZkZmE2YmFhNDgyZTE3MmE1NTEyYTRjODhlZjM5ZDVmMmM2ZDkiLCJpYXQiOjE3NjEzNDc1NTIuNjQwMDAyLCJuYmYiOjE3NjEzNDc1NTIuNjQwMDA0LCJleHAiOjE3OTI4ODM1NTIuNjM4MzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.cZ2j2jlIAgFWAGkWnujJwsXdhgu2-cd3s5_bcDlYKOrvsTkvLXg3qzQyHYnCsK90Q7LpUFkVM-nBeLZVa2j90linDWwSJPDlF6rK-3itvrG7NEphl9RVSgAxgfifQeXI6c21ouo-yoE7tLvUFTumzoztB_LqZZkpoYfyTUUt8Kam6J12lMzpZAG59--ALx7ybhUiHDBQKfv9vb5nZNvwHx98OOcH83bjyz76IwI9Q3y21gUfskJNcFkKE9QL95m_AVxBz2QlM80LMGHKqNWZHbq0F3hjlBDyu_J0Hg0tX2JTOYmOBtcPnHgyDtfz8YmUTnLULaRoOChRRFLPWbqM7nbmV6s-RkIzjdml0_7sD1K0QkQRdYABQstkK0F-Qaom1fKfoFGr5DIEOO7B01GNkTDwAbOum3OGGKHCIh7DpsAb_2TiwO-FgJjiLUA8eozDF0RdxyjLNj_x4eSvT71VYKwTZGzFiggOcVou4aGZvlVPxMBiG-XGUsG-ycHob1zNSRYYibMxQpZZS5gAlKZMc4O9AnLZ9tkne7JQhAmfkyIuSxTcB10yjBSU9jgwE1BF_YS3byiXAdvxMkY8fAKAR7Hj7H9j36GgC8-gj_2P5HbQfpDoj6P4PVRsfSlirDKXllJ3KDyiZYbfUPJ76hmMQxw6msa4XBdplbWNAee3wag\"\n    }\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"junior@tumisoft.com2\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Oct 2025 23:13:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": true,\n    \"message\": \"Credenciales invalidas\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8001/api/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8001/api/logout",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8001",
+									"path": [
+										"api",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Oct 2025 00:27:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": false,\n    \"message\": \"Se ha cerrado la sesión correctamente.\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZWQ4ODVhYTg5MjRmMDMyMzA2YmU4YWQ3OGYwYjE4OWQ2NzhhZWY0ZjhhZGEyMWE2NGQxODQxNTIxYTcyNWVkYmIxMTVhZGU1MzBhYjM3M2EiLCJpYXQiOjE3NjEzNTE3NzQuNzk5MTQ0LCJuYmYiOjE3NjEzNTE3NzQuNzk5MTQ1LCJleHAiOjE3OTI4ODc3NzQuNzk2NjQ0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.LYvcZHv9KjN9rxZx5ABne6bTjk1l1m2dHDTOsIM8BmPZzarp4JnUu8kd7Izr33TAWguzIXvdDpPZ8m4yoW0N_KNE9GlTmF6BZw2Sc7fT6NxYywD96Kz8Nx04n6_1ZmdKxoWkgvVe3Ot5NlpCT7cqxwYrwhfz4fobU9riUs9u4WIwgJUF4jWHu8jqw82I49omS1qhmGm5xb_-RU5ys0efbBm4agun84yVYioL8g6fbtpO69ACCWZllIknPZdmOfsJMmFkBOkKs7_cIOHQoq2QusXtXRhUQDCKl9N25fNrC9mAfY6in5ftLqNokTA80P2MnmW2SDe3VtSFqsahgkgTvNUpUvAtVzRVe5dtBHl1P3SPDMq5-bFLiheNmqahkU2DlTuQeMxzGnULBg1svlZEb1t5kBbSBVRYfyLTTBHpN9GWDM0TyaTtLc9GL9L3ybcRXFMaZBIstTEE3dOCHBy3nZM205L66Ww97GSLThAoSfZ7n6pUH9wwvo8o3lyLdsrtepRouh_yi9L7jv6vjWM2Aqsho7EytuWCF9KNQbNARMwWLacqHCtPS_F2_Bn0y3SVmYweDmpRc6rshEnVMTCDPzDiCJIgR91QPDUNzipiUvpIZcrQ18DFs3lK0E7YiNqFoMh7W-ACaJF5L_PF_Ea3cY0C3Mych15PirD_Y0E5_N4",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

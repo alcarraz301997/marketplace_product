@@ -12,7 +12,7 @@ class ProductSearchMapper
         return new ProductSearchRequestDto(
             $request->input('min_price', null),
             $request->input('max_price', null),
-            $request->input('order_by', 'ASC'),
+            $request->input('order_by', 'asc'),
         );
     }
 }

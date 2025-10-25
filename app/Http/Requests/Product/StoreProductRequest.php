@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests\Product;
 
+use App\Constant\ErrorHttp;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class StoreProductRequest extends FormRequest
 {
@@ -35,5 +38,14 @@ class StoreProductRequest extends FormRequest
             'price.min'      => 'El precio debe ser mayor a 0.',
             'stock.min'      => 'El stock no debe ser negativo.',
         ];
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'error'  => true,
+            'message' => 'Error de validación en los datos enviados.',
+            'errors'  => $validator->errors(),
+        ], ErrorHttp::UNPROCESSABLE_ENTITY));
     }
 }

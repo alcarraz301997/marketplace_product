@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests\Order;
 
+use App\Constant\ErrorHttp;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class StoreOrderRequest extends FormRequest
 {
@@ -27,5 +30,14 @@ class StoreOrderRequest extends FormRequest
             'products.*.id' => 'required|integer|exists:products,id',
             'products.*.quantity' => 'required|integer|min:0'
         ];
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'error'  => true,
+            'message' => 'Error de validación en los datos enviados.',
+            'errors'  => $validator->errors(),
+        ], ErrorHttp::UNPROCESSABLE_ENTITY));
     }
 }

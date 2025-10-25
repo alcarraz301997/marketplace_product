@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\Order\OrderRepository;
+use App\Repositories\Order\OrderRepositoryMySql;
 use App\Repositories\Product\ProductRepository;
 use App\Repositories\Product\ProductRepositoryMySql;
 use Illuminate\Foundation\Application;
@@ -24,6 +26,10 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton(ProductRepository::class, function (Application $app) {
             return new ProductRepositoryMySql();
+        });
+
+        $this->app->singleton(OrderRepository::class, function (Application $app) {
+            return new OrderRepositoryMySql();
         });
     }
 }

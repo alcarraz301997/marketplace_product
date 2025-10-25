@@ -7,6 +7,7 @@ use App\Dto\Product\Request\ProductoUpdateRequestDto;
 use App\Dto\Product\Request\ProductSearchRequestDto;
 use App\Models\Product;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 
 class ProductRepositoryMySql implements ProductRepository
 {
@@ -33,6 +34,15 @@ class ProductRepositoryMySql implements ProductRepository
 
 
         return $products->get();
+    }
+
+    /**
+     * @param integer $id
+     * @return Product
+     */
+    public function show(int $id): Product
+    {
+        return Product::find($id);
     }
 
     /**
@@ -72,5 +82,23 @@ class ProductRepositoryMySql implements ProductRepository
     public function destroy(int $id): void
     {
         Product::destroy($id);
+    }
+
+    /**
+     * @return Collection
+     */
+    public function topProducts(): Collection
+    {
+        return Product::select(
+                'products.id',
+                'products.name',
+                'products.price',
+                DB::raw('SUM(order_product.quantity) as total_sold')
+            )
+            ->join('order_product', 'products.id', '=', 'order_product.product_id')
+            ->groupBy('products.id', 'products.name', 'products.price')
+            ->orderByDesc('total_sold')
+            ->limit(5)
+            ->get();
     }
 }

@@ -17,6 +17,12 @@ interface ProductRepository
     public function index(ProductSearchRequestDto $productSearch): Collection;
 
     /**
+     * @param integer $id
+     * @return Product
+     */
+    public function show(int $id): Product;
+
+    /**
      * @param ProductoCreateRequestDto $productSearch
      * @return Product
      */
@@ -33,4 +39,9 @@ interface ProductRepository
      * @return void
      */
     public function destroy(int $id): void;
+
+    /**
+     * @return Collection
+     */
+    public function topProducts(): Collection;
 }

@@ -2,20 +2,27 @@
 
 namespace App\Repositories\Order;
 
-use JasonGuru\LaravelMakeRepository\Repository\BaseRepository;
-//use Your Model
+use App\Enum\StatusEnum;
+use App\Models\Order;
+use App\Models\User;
+use Illuminate\Support\Collection;
 
-/**
- * Class OrderRepository.
- */
-class OrderRepository extends BaseRepository
+interface OrderRepository
 {
     /**
-     * @return string
-     *  Return the model
+     * @return Collection
      */
-    public function model()
-    {
-        //return YourModel::class;
-    }
+    public function index(): Collection;
+
+    /**
+     * @return Collection
+     */
+    public function orderByUser(): Collection;
+
+    /**
+     * @param integer $userId
+     * @param StatusEnum $status
+     * @return Order
+     */
+    public function store(int $userId, float $total, StatusEnum $status): Order;
 }

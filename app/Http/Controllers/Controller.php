@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Log;
 
 class Controller extends BaseController
 {
@@ -34,6 +35,8 @@ class Controller extends BaseController
 
     public function error(string $message, string $code = ErrorHttp::SERVER_ERROR)
     {
+        Log::error("error: " . $message);
+
         return response()->json([
             'error' => true,
             'message' => $message

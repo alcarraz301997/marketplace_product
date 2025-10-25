@@ -2,6 +2,7 @@
 
 namespace App\Services\Product;
 
+use App\Dto\Order\Response\ProductOrderResponseDto;
 use App\Dto\Product\Request\ProductoCreateRequestDto;
 use App\Dto\Product\Request\ProductoUpdateRequestDto;
 use App\Dto\Product\Request\ProductSearchRequestDto;
@@ -58,5 +59,14 @@ class ProductService
     public function destroy(int $id): void
     {
         $this->productRepository->destroy($id);
+    }
+
+    /**
+     * @param ProductoUpdateRequestDto $productUpdate
+     * @return ProductOrderResponseDto[]
+     */
+    public function topProducts(): array
+    {
+        return $this->productRepository->topProducts()->toArray();
     }
 }

@@ -76,4 +76,15 @@ class ProductController extends Controller
             return $this->error($th->getMessage());
         }
     }
+
+    public function topProducts(): JsonResponse
+    {
+        try {
+            $products = $this->productService->topProducts();
+
+            return $this->response('Top 5 productos vendidos.', $products);
+        } catch (\Throwable $th) {
+            return $this->error($th->getMessage());
+        }
+    }
 }
